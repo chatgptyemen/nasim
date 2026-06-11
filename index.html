@@ -43,7 +43,281 @@
       }
     }
     </script>
+<style>
+/* General */
+*{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    box-sizing:border-box;
+}
 
+body{
+    direction:rtl;
+    text-align:right;
+    line-height:1.6;
+    background:#f9fafb;
+}
+
+/* Hero Section */
+.gradient-bg{
+    position:relative;
+    background:linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #1e3a8a 50%,
+        #2563eb 100%
+    );
+    color:#fff;
+    overflow:hidden;
+}
+
+.gradient-bg::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+}
+
+.gradient-bg > *{
+    position:relative;
+    z-index:1;
+}
+
+/* Sections */
+.section-padding{
+    padding:4rem 0;
+}
+
+/* Cards */
+.card-hover{
+    transition:all .3s ease;
+}
+
+.card-hover:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
+
+/* Floating WhatsApp */
+.floating-whatsapp{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    z-index:1000;
+    background:#25d366;
+    color:#fff;
+    border-radius:50px;
+    padding:15px 20px;
+    box-shadow:0 4px 12px rgba(37,211,102,.4);
+    text-decoration:none;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.05);
+    }
+}
+
+/* GPT Logo */
+.gpt-logo{
+    width:80px;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(45deg,#10b981,#3b82f6);
+    border-radius:20px;
+    color:#fff;
+    font-size:2rem;
+    font-weight:700;
+    margin:0 auto 1rem;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* Product Image */
+.product-image{
+    width:100%;
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(45deg,#f3f4f6,#e5e7eb);
+    border-radius:12px;
+    margin-bottom:1rem;
+    position:relative;
+    overflow:hidden;
+}
+
+.product-image::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(45deg,#667eea,#764ba2);
+    opacity:.08;
+}
+
+/* Feature Icons */
+.feature-icon{
+    width:60px;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 1rem;
+    border-radius:50%;
+    background:linear-gradient(45deg,#667eea,#764ba2);
+    color:#fff;
+    font-size:1.5rem;
+}
+
+/* Pricing Badge */
+.pricing-badge{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    background:linear-gradient(45deg,#f59e0b,#ef4444);
+    color:#fff;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:.8rem;
+    font-weight:700;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+/* Bank Card */
+.bank-card{
+    background:linear-gradient(45deg,#1e40af,#3730a3);
+    color:#fff;
+    border-radius:15px;
+    padding:2rem;
+    position:relative;
+    overflow:hidden;
+}
+
+.bank-card::before{
+    content:'';
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.1) 0%,
+        transparent 70%
+    );
+    animation:shimmer 8s linear infinite;
+}
+
+@keyframes shimmer{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* Reviews */
+.review-avatar{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:#fff;
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+/* Blog Images */
+.blog-image{
+    width:100%;
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(45deg,#e5e7eb,#f3f4f6);
+    border-radius:10px;
+    margin-bottom:1rem;
+    position:relative;
+}
+
+.blog-image::after{
+    content:'📝';
+    font-size:3rem;
+    opacity:.3;
+}
+
+/* Buttons */
+.btn-primary{
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+/* Navigation */
+nav{
+    backdrop-filter:blur(10px);
+}
+
+/* Hero Text */
+#home h1{
+    color:#fff;
+    font-weight:800;
+    text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+
+#home p{
+    color:rgba(255,255,255,.95);
+    text-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .section-padding{
+        padding:2rem 0;
+    }
+
+    #home h1{
+        font-size:2.2rem;
+        line-height:1.4;
+    }
+
+    #home p{
+        font-size:1.1rem;
+    }
+
+    .gpt-logo{
+        width:65px;
+        height:65px;
+        font-size:1.5rem;
+    }
+}
+
+/* Print */
+@media print{
+
+    .floating-whatsapp{
+        display:none;
+    }
+
+    body{
+        font-size:12px;
+    }
+
+    .section-padding{
+        padding:2rem 0;
+    }
+}
+</style>
     <!-- CDN Links -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
@@ -527,6 +801,10 @@
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
     
-    <script src="js/script.js"></script>
+    <script>
+    function animateOnScroll(){const t=document.querySelectorAll(".card-hover");t.forEach(t=>{t.getBoundingClientRect().top<window.innerHeight-150&&(t.style.opacity="1",t.style.transform="translateY(0)")})}document.querySelectorAll('a[href^="#"]').forEach(t=>{t.addEventListener("click",function(t){t.preventDefault();const e=document.querySelector(this.getAttribute("href"));e&&e.scrollIntoView({behavior:"smooth",block:"start"})})}),document.querySelectorAll(".card-hover").forEach(t=>{t.style.opacity="0",t.style.transform="translateY(20px)",t.style.transition="all 0.6s ease"}),window.addEventListener("scroll",animateOnScroll),animateOnScroll(),document.querySelectorAll('a[href*="wa.me"]').forEach(t=>{t.addEventListener("click",function(){console.log("WhatsApp button clicked")})});const observerOptions={threshold:.1,rootMargin:"0px 0px -50px 0px"},observer=new IntersectionObserver(function(t){t.forEach(t=>{t.isIntersecting&&(t.target.style.opacity="1",t.target.style.transform="translateY(0)")})},observerOptions);function copyToClipboard(t,e){navigator.clipboard.writeText(t).then(function(){var t=e.textContent;e.textContent="تم النسخ!",e.style.color="#10b981",setTimeout(function(){e.textContent=t,e.style.color=""},2e3)})}document.querySelectorAll("section").forEach(t=>{t.style.opacity="0",t.style.transform="translateY(30px)",t.style.transition="all 0.8s ease",observer.observe(t)}),document.querySelectorAll(".bank-card p, .bg-green-50 p").forEach(t=>{t.textContent.match(/^\d+$/)&&(t.style.cursor="pointer",t.title="اضغط للنسخ",t.addEventListener("click",function(){copyToClipboard(this.textContent,this)}))});
+
+    </script>
 </body>
 </html>
+
